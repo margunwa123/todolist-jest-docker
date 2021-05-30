@@ -7,7 +7,7 @@ function TodoProvider({ children }: { children: React.ReactNode }) {
   const [todos, setTodos] = useLocalStorage<Todo[]>("todos", []);
 
   function addTodo(todo: Todo) {
-    if (todos.find((x) => x.id == todo.id)) {
+    if (todos.find((x) => x.id === todo.id)) {
       throw new Error("Todo id is not unique");
     }
     setTodos((prevTodos) => [...prevTodos, todo]);
@@ -20,7 +20,7 @@ function TodoProvider({ children }: { children: React.ReactNode }) {
   function toggleDone(id: string) {
     setTodos((prevTodos) =>
       prevTodos.map((todo) => {
-        if (todo.id == id) {
+        if (todo.id === id) {
           return {
             ...todo,
             date: new Date().toISOString().slice(0, 10),
