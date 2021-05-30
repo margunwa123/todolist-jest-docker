@@ -2,6 +2,13 @@ import React, { useEffect, useMemo, useState } from "react";
 
 const prefix = "todoapp-jest-";
 
+/**
+ * A function that has similar use as useState, but with localstorage saving functionality.
+ * This hook will create a localstorage item and updates it everytime the state changes
+ * @param name - the name of localstorage item (must be unique for each useLocalStorage use)
+ * @param initialState - the initialstate of the item if there is no item in localstorage
+ * @returns state and setstate for user
+ */
 function useLocalStorage<T = any>(
   name: string,
   initialState: T

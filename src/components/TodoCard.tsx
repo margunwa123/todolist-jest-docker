@@ -2,6 +2,12 @@ import React from "react";
 import { Button, Card } from "react-bootstrap";
 import { Todo, TodoContextProps, useTodos } from "../contexts/TodoContext";
 
+/**
+ *
+ * @param todo : TodoCardProps
+ * @returns JSX Element
+ * A todo card with option to delete or toggle done
+ */
 function TodoCard({ todo }: TodoCardProps) {
   const { removeTodo, toggleDone } = useTodos() as TodoContextProps;
 

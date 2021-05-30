@@ -1,17 +1,14 @@
 import React, { useMemo, useState } from "react";
-import {
-  Accordion,
-  Alert,
-  Button,
-  Card,
-  Col,
-  Form,
-  Row,
-} from "react-bootstrap";
+import { Accordion, Alert, Button, Card, Form, Row } from "react-bootstrap";
 import { v4 } from "uuid";
 import Todolist from "./components/Todolist";
 import { TodoContextProps, useTodos } from "./contexts/TodoContext";
 
+/**
+ * The main application
+ *
+ * @returns a jsx element
+ */
 function App() {
   const [todoname, setTodoname] = useState<string>("");
   const { todos, addTodo } = useTodos() as TodoContextProps;
